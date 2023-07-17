@@ -29,4 +29,4 @@ jobs:
       name: Replace tag
       with:
         files: Deployment.yml
-        replacements: '$tag=${{ github.run_attempt }}'
+        replacements: '$tagg=${{ github.run_attempt }}'

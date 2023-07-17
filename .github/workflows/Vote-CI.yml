@@ -25,7 +25,7 @@ jobs:
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-    - uses: ./.github/actions/replace
+    - uses: datamonsters/replace-action@v2
       name: Replace tag
       with:
         files: Deployment.yml

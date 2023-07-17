@@ -25,3 +25,8 @@ jobs:
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+    - uses: ./.github/actions/replace
+      name: Replace tag
+      with:
+        files: Deployment.yml
+        replacements: '$tag=${{ github.run_attempt }}'

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: vote
-        image: iamnilanjan3/vote:latest
+        image: iamnilanjan3/vote:$tag
         ports:
         - containerPort: 80
 

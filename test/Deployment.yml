@@ -1,34 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vote
+  name: nginx-deployment
+  labels:
+    app: nginx
 spec:
+  replicas: 3
   selector:
     matchLabels:
-      app: vote
-  replicas: 1
+      app: nginx
   template:
     metadata:
       labels:
-        app: vote
+        app: nginx
     spec:
       containers:
-      - name: vote
-        image: iamnilanjan3/vote: $tag
+      - name: nginx
+        image: nginx:1.14.2
         ports:
         - containerPort: 80
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: vote-service
-  labels:
-    app: vote
-spec:
-  ports:
-  - port: 80
-    targetPort: 80
-  type: LoadBalancer
-  selector:
-     app: vote   

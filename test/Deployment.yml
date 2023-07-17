@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.14.2
+        image: iamnilanjan3/vote
         ports:
         - containerPort: 80

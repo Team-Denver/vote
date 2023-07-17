@@ -25,8 +25,11 @@ jobs:
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-    - uses: datamonsters/replace-action@v2
-      name: Replace tag
-      with:
-        files: Deployment.yml
-        replacements: '$tagg=${{ github.run_attempt }}'
+        
+    - name: Replace new build number
+      run: sed -E -i'' "s/(.*vote:).*/\1${{ github.run_attempt }}/" 'Deployment.yml'
+
+    - name: Show Manifest
+      run: cat Deployment.yml
+
+    

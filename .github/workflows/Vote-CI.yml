@@ -37,7 +37,9 @@ jobs:
     - name: stage changed files
       run: git add .
     - name: commit changed files
-      run: git commit -m "Auto updating Deployment.yml"
+      run: |
+       git config --global user.email "rahulgandhi2803@gmail.com"
+       git config --global user.name "rahul"
     - name: fetch from master
       run: git fetch origin master
     - name: push code to master

@@ -32,4 +32,13 @@ jobs:
     - name: Show Manifest
       run: cat Deployment.yml
 
-    
+    - name: check for changes
+      run: git status
+    - name: stage changed files
+      run: git add .
+    - name: commit changed files
+      run: git commit -m "Auto updating Deployment.yml"
+    - name: fetch from master
+      run: git fetch origin master
+    - name: push code to master
+      run: git push origin HEAD:master

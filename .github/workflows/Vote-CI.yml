@@ -40,7 +40,4 @@ jobs:
       run: |
        git config --global user.email "rahulgandhi2803@gmail.com"
        git config --global user.name "rahul"
-    - name: fetch from master
-      run: git fetch origin master
-    - name: push code to master
-      run: git push origin HEAD:master
+       git push
